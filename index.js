@@ -6,9 +6,12 @@ const port = process.env.PORT || 4000;
 
 const cors = require("cors");
 
-// ✅ CORS middleware (ENOUGH for preflight)
+// ✅ Proper CORS setup
 app.use(cors({
-  origin: "http://localhost:5173",
+  origin: [
+    "http://localhost:5173",
+    "https://nikku4kumawat.github.io"
+  ],
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
 }));
